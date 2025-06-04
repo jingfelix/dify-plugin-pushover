@@ -1,0 +1,41 @@
+identity:
+  name: send_message
+  author: langgenius
+  label:
+    en_US: Send Message
+description:
+  human:
+    en_US: Send a message to the Pushover user key
+  llm: Send a message to the Pushover user key
+parameters:
+- name: message
+  type: string
+  required: true
+  label:
+    en_US: Message
+  human_description:
+    en_US: The message to send
+  llm_description: Message to send to the Pushover user
+  form: llm
+- name: title
+  type: string
+  required: true
+  label:
+    en_US: Title
+  human_description:
+    en_US: The title of the message
+  llm_description: Title of the message to send to the Pushover user
+  form: llm
+- name: device
+  type: string
+  required: false
+  label:
+    en_US: Device
+  human_description:
+    en_US: The device to send the message to (optional)
+  llm_description: Device to send the message to, if not specified, it will be sent
+    to all devices
+  form: schema
+extra:
+  python:
+    source: tools/send_message.py

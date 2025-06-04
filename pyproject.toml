@@ -7,6 +7,8 @@ authors = [
 ]
 dependencies = [
     "dify_plugin>=0.2.1,<0.3.0",
+    "dify-easy>=0.1.0",
+    "chump>=1.6.0",
 ]
 requires-python = ">=3.12"
 readme = "README.md"

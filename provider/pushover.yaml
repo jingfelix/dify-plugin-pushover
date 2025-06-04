@@ -1,0 +1,25 @@
+identity:
+  author: langgenius
+  name: pushover
+  label:
+    en_US: Pushover
+  description:
+    en_US: Pushover plugin for sending notifications
+  icon: icon.svg
+credentials_for_provider:
+  api_token:
+    type: secret-input
+    required: true
+    label:
+      en_US: API Token
+    placeholder:
+      en_US: Enter your Pushover API Token
+    help:
+      en_US: Your Pushover API Token
+    url: https://pushover.net/
+tools:
+- tools/get_devices.yaml
+- tools/send_message.yaml
+extra:
+  python:
+    source: provider/pushover.py
