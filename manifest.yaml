@@ -4,9 +4,13 @@ author: langgenius
 name: pushover
 label:
   en_US: Pushover
+  zh_CN: Pushover
+  ja_JP: Pushover
 description:
   en_US: Pushover plugin for sending notifications
-icon: icon.svg
+  zh_CN: 使用 Pushover 发送通知
+  ja_JP: 通知送信用のPushoverプラグイン
+icon: icon.png
 resource:
   memory: 268435456
   permission: {}
