@@ -23,12 +23,23 @@ class PushoverCredentials(BaseModel):
             label="API Token",
             help="Your Pushover API Token",
             placeholder="Enter your Pushover API Token",
+            url="https://pushover.net/apps",
+            type=CredentialType.secret_input,
+            required=True,
+        ),
+    ] = ""
+    user_key: Annotated[
+        str,
+        Credential(
+            name="user_key",
+            label="User Key",
+            help="Your Pushover User Key",
+            placeholder="Enter your Pushover User Key",
             url="https://pushover.net/",
             type=CredentialType.secret_input,
             required=True,
         ),
     ] = ""
-    user_key: str = ""
 
 
 class PushoverPlugin(BasePlugin):
@@ -101,7 +112,7 @@ class PushoverPlugin(BasePlugin):
                 placeholder="Enter the device name (optional)",
                 type=ParamType.string,
                 required=False,
-                form=FormType.schema,
+                form=FormType.llm,
             ),
         ] = "",
     ) -> Generator:
@@ -110,7 +121,6 @@ class PushoverPlugin(BasePlugin):
         user = app.get_user(self.credentials.user_key)
 
         if device:
-            device = user.devices
             if device not in user.devices:
                 raise ValueError(f"Device '{device}' not found in user's devices.")
 
@@ -118,7 +128,7 @@ class PushoverPlugin(BasePlugin):
         else:
             msg = user.send_message(message, title=title)
 
-        yield msg
+        yield f"Successfully sent message: {str(msg)}"
 
 
 plugin = PushoverPlugin(

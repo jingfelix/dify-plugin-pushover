@@ -35,7 +35,7 @@ parameters:
     en_US: The device to send the message to (optional)
   llm_description: Device to send the message to, if not specified, it will be sent
     to all devices
-  form: schema
+  form: llm
 extra:
   python:
     source: tools/send_message.py

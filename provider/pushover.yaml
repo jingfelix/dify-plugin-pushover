@@ -16,6 +16,16 @@ credentials_for_provider:
       en_US: Enter your Pushover API Token
     help:
       en_US: Your Pushover API Token
+    url: https://pushover.net/apps
+  user_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: User Key
+    placeholder:
+      en_US: Enter your Pushover User Key
+    help:
+      en_US: Your Pushover User Key
     url: https://pushover.net/
 tools:
 - tools/get_devices.yaml
